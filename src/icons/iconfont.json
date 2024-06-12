@@ -1,0 +1,37 @@
+{
+  "id": "4574823",
+  "name": "后台管理系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1206766",
+      "name": "订单",
+      "font_class": "dingdan",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "9496435",
+      "name": "销售额",
+      "font_class": "xiaoshoue-copy",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "18267915",
+      "name": "订单",
+      "font_class": "dingdan1",
+      "unicode": "e98d",
+      "unicode_decimal": 59789
+    },
+    {
+      "icon_id": "23019995",
+      "name": "销售额",
+      "font_class": "xiaoshoue",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}
