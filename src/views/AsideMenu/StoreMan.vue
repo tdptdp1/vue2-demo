@@ -7,7 +7,7 @@
         <div  class="text item">
           <div class="content">
             <label for="">店铺名称</label>
-            <el-input v-model="input" placeholder="请输入内容"></el-input>
+            <el-input v-model="storeName" placeholder="请输入内容"></el-input>
           </div>
           <div class="content top_conent">
             <label for="">店铺公告</label>
@@ -15,7 +15,7 @@
               type="textarea"
               :rows="5"
               placeholder="请输入内容"
-              v-model="textarea">
+              v-model="storeNotice">
             </el-input>
           </div>
           <div class="content top_conent">
@@ -50,6 +50,8 @@ export default {
   name: 'StoreMan',
   data () {
     return {
+      storeName: '牛战士餐厅（绵阳城市学院）',
+      storeNotice: '牛战士餐厅是一家以牛肉为主打菜品的餐厅。它的装修风格现代简约，通常用暖色调和木质元素营造出舒适的用餐环境。'
     }
   }
 }
@@ -83,7 +85,7 @@ export default {
           }
           ::v-deep .el-upload{
             width: 100px;
-            margin-left: 100px;
+            margin-left: 78px;
             height: 100px;
             line-height: 100px;
           }
