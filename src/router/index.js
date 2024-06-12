@@ -16,11 +16,13 @@ import GoodsGroup from '@/views/GoodsChildren/GoodsGroup.vue'
 import GoodsList from '@/views/GoodsChildren/GoodsList.vue'
 import OrderTotal from '@/views/SellTotalChildren.vue/OrderTotal.vue'
 import ShopTotal from '@/views/SellTotalChildren.vue/ShopTotal.vue'
+import LoginIndex from '@/views/LoginIndex.vue'
 /* 注册路由 */
 Vue.use(VueRouter)
 /* 创建路由实例 */
 const router = new VueRouter({
   routes: [
+    { path: '/', redirect: '/LoginIndex' },
     {
       path: '/',
       component: VueLayout,
@@ -65,10 +67,10 @@ const router = new VueRouter({
             { path: 'OrderTotal', component: OrderTotal, meta: { navTitle: '订单统计' } }
           ]
         },
-        { path: 'StoreMan', component: StoreMan, meta: { navTitle: '店铺管理' } },
-        { path: '/', redirect: '/BackHome' }
+        { path: 'StoreMan', component: StoreMan, meta: { navTitle: '店铺管理' } }
       ]
-    }
+    },
+    { path: '/LoginIndex', component: LoginIndex }
   ]
 })
 
