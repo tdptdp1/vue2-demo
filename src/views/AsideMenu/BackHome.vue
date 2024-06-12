@@ -129,7 +129,7 @@ export default {
       }
     }
     #echarIoc{
-      height: 550px;
+      height: 500px;
       padding: 20px;
       border-radius: 5px;
       background-color: white;
