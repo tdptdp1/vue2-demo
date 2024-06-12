@@ -61,31 +61,33 @@ export default {
         data: ['2016/10/1', '2017/10/1', '2018/10/1', '2019/10/1', '2020/10/1', '2021/10/1', '2022/10/1']
       },
       yAxis: {
-        type: 'value'
+        type: 'value',
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#686868'
+          }
+        }
       },
       series: [
         {
           name: '订单',
           type: 'line',
-          stack: 'Total',
-          data: [25, 25, 101, 134, 90, 230, 210]
+          data: [280, 350, 300, 250, 285, 286, 296]
         },
         {
           name: '销售额',
           type: 'line',
-          stack: 'Total',
-          data: [220, 182, 191, 100, 290, 20, 310]
+          data: [1000, 1100, 860, 1600, 1200, 1190, 900]
         },
         {
           name: '注册人数',
           type: 'line',
-          stack: 'Total',
-          data: [55, 22, 55, 58, 85, 45, 60]
+          data: [250, 280, 270, 240, 286, 210, 300]
         },
         {
           name: '管理员人数',
           type: 'line',
-          stack: 'Total',
           data: [80, 0, 50, 60, 40, 80, 100, 60]
         }
       ]

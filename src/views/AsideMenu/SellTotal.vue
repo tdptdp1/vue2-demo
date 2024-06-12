@@ -1,6 +1,5 @@
 <template>
   <div id="SellTotal">
-    SellTotal
     <router-view></router-view>
   </div>
 </template>
