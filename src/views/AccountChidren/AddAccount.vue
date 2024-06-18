@@ -7,15 +7,15 @@
       <div  class="text item">
         <div class="content">
             <label for="" style="margin-left: 30px;">账号</label>
-            <el-input v-model="uName" placeholder="请输入内容"></el-input>
+            <el-input v-model="ruleFrom.uName" placeholder="请输入内容"></el-input>
         </div>
         <div class="content">
             <label for="" style="margin-left: 30px;">密码</label>
-            <el-input v-model="uPassword" placeholder="请输入内容"></el-input>
+            <el-input v-model="ruleFrom.uPassword" placeholder="请输入内容"></el-input>
         </div>
         <div class="content">
             <label for="" style="margin-left: 13px;">用户组</label>
-            <el-select v-model="selectName" placeholder="请选择" style="width: 350px;">
+            <el-select v-model="ruleFrom.selectName" placeholder="请选择" style="width: 350px;">
               <el-option
                 v-for="item in options"
                 :key="item.value"
@@ -27,7 +27,7 @@
       </div>
       <div class="btn">
         <el-button type="primary">添加</el-button>
-        <el-button>重置</el-button>
+        <el-button  @click="resetForm()">重置</el-button>
       </div>
     </el-card>
   </div>
@@ -38,9 +38,11 @@ export default {
   name: 'AddAccount',
   data () {
     return {
-      selectName: '',
-      uName: '',
-      uPassword: '',
+      ruleFrom: {
+        selectName: '',
+        uName: '',
+        uPassword: ''
+      },
       options: [{
         value: '选项1',
         label: '牛魔王'
@@ -51,6 +53,14 @@ export default {
         value: '选项3',
         label: '妲己'
       }]
+    }
+  },
+  methods: {
+    resetForm () {
+      console.log('teste')
+      for (const key in this.ruleFrom) {
+        this.ruleFrom[key] = ''
+      }
     }
   }
 }

@@ -7,20 +7,20 @@
       <div  class="text item">
         <div class="content">
             <label for="" style="margin-left: 30px;">原密码</label>
-            <el-input v-model="uName" placeholder="请输入内容"></el-input>
+            <el-input v-model="ruleFrom.uName" placeholder="请输入内容"></el-input>
         </div>
         <div class="content">
             <label for="" style="margin-left: 30px;">新密码</label>
-            <el-input v-model="uPassword" placeholder="请输入内容"></el-input>
+            <el-input v-model="ruleFrom.uPassword" placeholder="请输入内容"></el-input>
         </div>
         <div class="content">
             <label for="" style="margin-left: 13px;">确认密码</label>
-            <el-input v-model="comfim" placeholder="请输入内容"></el-input>
+            <el-input v-model="ruleFrom.comfim" placeholder="请输入内容"></el-input>
         </div>
       </div>
       <div class="btn">
         <el-button type="primary">确定</el-button>
-        <el-button>重置</el-button>
+        <el-button  @click="resetForm()">重置</el-button>
       </div>
     </el-card>
   </div>
@@ -31,9 +31,18 @@ export default {
   name: 'UpdateAccount',
   data () {
     return {
-      uName: '',
-      uPassword: '',
-      comfim: ''
+      ruleFrom: {
+        uName: '',
+        uPassword: '',
+        comfim: ''
+      }
+    }
+  },
+  methods: {
+    resetForm () {
+      for (const key in this.ruleFrom) {
+        this.ruleFrom[key] = ''
+      }
     }
   }
 }
