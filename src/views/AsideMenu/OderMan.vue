@@ -85,8 +85,8 @@
             label="操作"
             width="100">
             <template slot-scope="scope">
-              <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-              <el-button type="text" size="small">编辑</el-button>
+              <el-button @click="handlShowIofo(scope.row)" type="text" size="small">查看</el-button>
+              <el-button @click="handlShowIofo(scope.row)" type="text" size="small">编辑</el-button>
             </template>
           </el-table-column>
       </el-table>
@@ -100,6 +100,28 @@
       :total="400">
     </el-pagination>
   </div>
+    <!-- 查看Dialog -->
+    <el-dialog
+      title="详情"
+      :visible.sync="dialogVisible"
+      width="30%"
+     >
+     <el-form status-icon  label-width="100px" class="demo-ruleForm" v-if="tableDeatail">
+        <el-form-item label="姓名" prop="pass">
+          <el-input  v-model="tableDeatail.harvest" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="送达时间" prop="checkPass">
+          <el-input  v-model="tableDeatail.reachTime" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="备注" prop="age">
+          <el-input v-model.number="tableDeatail.remark"></el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -111,6 +133,7 @@ export default {
       harvest: '',
       telePhone: '',
       oderStatus: '',
+      dialogVisible: false,
       tableData: [{
         orderNum: '1240533',
         oderTime: '19:00:00',
@@ -161,7 +184,15 @@ export default {
         remark: '魔鬼辣',
         oerderMoney: '58',
         oerderStatus: '已受理'
-      }]
+      }],
+      tableDeatail: null
+    }
+  },
+  methods: {
+    handlShowIofo (row) {
+      this.dialogVisible = true
+      this.tableDeatail = row
+      console.log(this.tableDeatail)
     }
   }
 }

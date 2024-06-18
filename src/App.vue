@@ -6,9 +6,7 @@
 
 <style lang="less">
   #app{
-    position: fixed;
-    left: 0;
-    right: 0;
     height: 100%;
+    overflow: hidden;
   }
 </style>
